@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Based IDS for IoT Systems</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <script src="/static/scripts.js"></script>
+
+</head>
+<body>
+    <h1>Cloud Based IDS for IoT Systems</h1>
+    <p>Built with XGBoost ML Model</p>
+    <br>
+    <p class="upload">Upload PCAP File</p>
+
+    <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" id="file-upload" name="file" class="file-input" onchange="updateFileName()">
+        <label id="file-label" for="file-upload" class="file-label" data-content="No file chosen">PCAP File >></label>
+        <button type="submit" onclick="showProgressBar()">Submit</button>
+        <br>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+            <span id="progress-text"></span>
+        </div>
+    </form>
+    <br>
+    <!-- <div id="progress-container">
+        <div id="progress-bar"></div>
+        <span id="progress-text"></span>
+    </div> -->
+
+
+
+    {% if success_message %}
+    <p>{{ success_message }}</p>
+    {% endif %}
+
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
